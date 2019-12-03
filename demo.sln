@@ -1,57 +1,48 @@
+Console.Write("公鸡5元一只，母鸡3元一只，小鸡一元3只，用100元买100只鸡");
+            Console.WriteLine("\n");
+            
+           /*
+            int gj=0;
+            int mj=0;
+            int xj=0;
+            int p = 0;
+            for (gj = 1; gj <= 19;gj++ )
+            {
+                for (mj = 1; mj <= 33; mj++)
+                {
+                    xj = 100 - gj - mj;//获取百中除了公鸡和母鸡后，小鸡的总钱数
+                    Math.DivRem(xj, 3, out p);//计算小鸡的个数
+                    if (((5*gj+3*mj+xj/3)==100)&&p==0)//如果公鸡、母鸡和小鸡的总钱数加起来为100
+                    {
+                        Console.WriteLine("公鸡的个数"+gj);
+                         Console.WriteLine("母鸡的个数"+mj);
+                         Console.WriteLine("小鸡的个数"+xj);
+                         Console.WriteLine("\n");
+                    }
+                }
+            }
+*/
+            int allMoney = 100;//100元
+            int allChicken = 100;//100只
+            int gj = 5;
+            int mj = 3;
+            int xj = 1;
+            int xjnum = 3;
+            for (int x = 0; x <= allChicken; x++)
+            {
+                for (int y = 0; y <=allChicken; y++)
+                {
+                    int z = allChicken - x - y;
+                    if (z % xjnum != 0) continue;
+                    z = z / xjnum;
+                    int Money = x * gj + y * mj + z * xj;
+                    if (Money==allMoney)
+                    {
+                        Console.WriteLine("公鸡的个数：{0},母鸡：{1},小鸡：{2}",x,y,z*xjnum);
+                    }
+                }
 
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "demo.Android", "demo.Android\demo.Android.csproj", "{240941CC-D4AD-48A5-B09A-F4951B9A5AE7}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "demo.iOS", "demo.iOS\demo.iOS.csproj", "{CBECC5B3-C111-48DE-8711-5867EC9B692B}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "demo", "demo\demo.csproj", "{030FC72A-54C5-4A87-98BF-214B0CD051F4}"
-EndProject
-Global
-	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Any CPU = Debug|Any CPU
-		Release|Any CPU = Release|Any CPU
-		Debug|iPhoneSimulator = Debug|iPhoneSimulator
-		Release|iPhoneSimulator = Release|iPhoneSimulator
-		Debug|iPhone = Debug|iPhone
-		Release|iPhone = Release|iPhone
-	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{240941CC-D4AD-48A5-B09A-F4951B9A5AE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{240941CC-D4AD-48A5-B09A-F4951B9A5AE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{240941CC-D4AD-48A5-B09A-F4951B9A5AE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{240941CC-D4AD-48A5-B09A-F4951B9A5AE7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{240941CC-D4AD-48A5-B09A-F4951B9A5AE7}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
-		{240941CC-D4AD-48A5-B09A-F4951B9A5AE7}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
-		{240941CC-D4AD-48A5-B09A-F4951B9A5AE7}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
-		{240941CC-D4AD-48A5-B09A-F4951B9A5AE7}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
-		{240941CC-D4AD-48A5-B09A-F4951B9A5AE7}.Debug|iPhone.ActiveCfg = Debug|Any CPU
-		{240941CC-D4AD-48A5-B09A-F4951B9A5AE7}.Debug|iPhone.Build.0 = Debug|Any CPU
-		{240941CC-D4AD-48A5-B09A-F4951B9A5AE7}.Release|iPhone.ActiveCfg = Release|Any CPU
-		{240941CC-D4AD-48A5-B09A-F4951B9A5AE7}.Release|iPhone.Build.0 = Release|Any CPU
-		{CBECC5B3-C111-48DE-8711-5867EC9B692B}.Debug|Any CPU.ActiveCfg = Debug|iPhoneSimulator
-		{CBECC5B3-C111-48DE-8711-5867EC9B692B}.Debug|Any CPU.Build.0 = Debug|iPhoneSimulator
-		{CBECC5B3-C111-48DE-8711-5867EC9B692B}.Release|Any CPU.ActiveCfg = Release|iPhoneSimulator
-		{CBECC5B3-C111-48DE-8711-5867EC9B692B}.Release|Any CPU.Build.0 = Release|iPhoneSimulator
-		{CBECC5B3-C111-48DE-8711-5867EC9B692B}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
-		{CBECC5B3-C111-48DE-8711-5867EC9B692B}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
-		{CBECC5B3-C111-48DE-8711-5867EC9B692B}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
-		{CBECC5B3-C111-48DE-8711-5867EC9B692B}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
-		{CBECC5B3-C111-48DE-8711-5867EC9B692B}.Debug|iPhone.ActiveCfg = Debug|iPhone
-		{CBECC5B3-C111-48DE-8711-5867EC9B692B}.Debug|iPhone.Build.0 = Debug|iPhone
-		{CBECC5B3-C111-48DE-8711-5867EC9B692B}.Release|iPhone.ActiveCfg = Release|iPhone
-		{CBECC5B3-C111-48DE-8711-5867EC9B692B}.Release|iPhone.Build.0 = Release|iPhone
-		{030FC72A-54C5-4A87-98BF-214B0CD051F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{030FC72A-54C5-4A87-98BF-214B0CD051F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{030FC72A-54C5-4A87-98BF-214B0CD051F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{030FC72A-54C5-4A87-98BF-214B0CD051F4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{030FC72A-54C5-4A87-98BF-214B0CD051F4}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
-		{030FC72A-54C5-4A87-98BF-214B0CD051F4}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
-		{030FC72A-54C5-4A87-98BF-214B0CD051F4}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
-		{030FC72A-54C5-4A87-98BF-214B0CD051F4}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
-		{030FC72A-54C5-4A87-98BF-214B0CD051F4}.Debug|iPhone.ActiveCfg = Debug|Any CPU
-		{030FC72A-54C5-4A87-98BF-214B0CD051F4}.Debug|iPhone.Build.0 = Debug|Any CPU
-		{030FC72A-54C5-4A87-98BF-214B0CD051F4}.Release|iPhone.ActiveCfg = Release|Any CPU
-		{030FC72A-54C5-4A87-98BF-214B0CD051F4}.Release|iPhone.Build.0 = Release|Any CPU
-	EndGlobalSection
-EndGlobal
+            }
+            
+            Console.ReadKey();
+        }
